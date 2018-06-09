@@ -883,14 +883,14 @@ void CL_ParseServerMessage (void)
 
 				if (cl.paused)
 				{
-					//CDAudio_Pause (); //MARTY FIXME
+					CDAudio_Pause ();
 #if defined (_WIN32) && !defined(_XBOX)
 					VID_HandlePause (true);
 #endif
 				}
 				else
 				{
-					//CDAudio_Resume (); //MARTY FIXME
+					CDAudio_Resume ();
 #if defined (_WIN32) && !defined(_XBOX)
 					VID_HandlePause (false);
 #endif
@@ -930,13 +930,11 @@ void CL_ParseServerMessage (void)
 			cl.looptrack = MSG_ReadByte ();
 			if ( (cls.demoplayback || cls.demorecording) && (cls.forcetrack != -1) )
 			{
-				//MARTY FIXME
-				//CDAudio_Play ((byte)cls.forcetrack, true);
+				CDAudio_Play ((byte)cls.forcetrack, true);
 			}
 			else
 			{
-				//MARTY FIXME
-				//CDAudio_Play ((byte)cl.cdtrack, true);
+				CDAudio_Play ((byte)cl.cdtrack, true);
 			}
 			break;
 

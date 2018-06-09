@@ -48,6 +48,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #ifdef _XBOX // Silence harmless warnigns
 #pragma warning ( disable : 4305 )
 #pragma warning ( disable : 4018 )
+#pragma warning ( disable : 4101 ) // Marty - Why did id leave many unused local varables?
 #endif
 
 #if defined(_WIN32) && !defined(WINDED) && !defined(_XBOX)

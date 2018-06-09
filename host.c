@@ -724,7 +724,7 @@ void _Host_Frame (float time)
 	else
 		S_Update (vec3_origin, vec3_origin, vec3_origin, vec3_origin);
 	
-	//CDAudio_Update(); MARTY FIXME - WIP
+	CDAudio_Update();
 
 	if (host_speeds.value)
 	{
@@ -928,7 +928,7 @@ void Host_Init (quakeparms_t *parms)
 #endif
 
 #endif	// _WIN32
-		//CDAudio_Init (); //MARTY FIXME
+		CDAudio_Init ();
 		Sbar_Init ();
 		CL_Init ();
 #ifdef _WIN32 // on non win32, mouse comes before video for security reasons
@@ -970,7 +970,7 @@ void Host_Shutdown(void)
 
 	Host_WriteConfiguration (); 
 
-//	CDAudio_Shutdown (); //MARTY FIXME
+	CDAudio_Shutdown ();
 	NET_Shutdown ();
 	S_Shutdown();
 //	IN_Shutdown ();  //MARTY FIXME
