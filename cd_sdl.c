@@ -1,11 +1,8 @@
 /*
 	cd_sdl.c
 	$Id: cd_sdl.c,v 1.7 2006/03/24 15:45:22 sezero Exp $
-
 	Copyright (C) 2001  Mark Baker <homer1@together.net>
-	Taken from SDLquake with modifications to make it work
-	with Linux Hexen II: Hammer of Thyrion
-
+	
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
 	as published by the Free Software Foundation; either version 2
@@ -20,9 +17,9 @@
 	You should have received a copy of the GNU General Public License
 	along with this program; if not, write to:
 
-		Free Software Foundation, Inc.
-		59 Temple Place - Suite 330
-		Boston, MA  02111-1307, USA
+	Free Software Foundation, Inc.
+	59 Temple Place - Suite 330
+	Boston, MA  02111-1307, USA
 */
 
 #ifdef _USE_SDL_CDROM
@@ -58,7 +55,7 @@ void CDAudio_Play(byte track, qboolean looping)
 
 	looping *= -1;
 
-	sprintf(track_name, "D:\\music\\track%02d.ogg", track); //MARTY
+	sprintf(track_name, "D:\\music\\track%02d.ogg", track); // MARTY
 
 	current_music = Mix_LoadMUS(track_name);         
 
@@ -74,7 +71,7 @@ void CDAudio_Play(byte track, qboolean looping)
 			Mix_PlayMusic(current_music, looping);
 		}
 
-		Mix_HookMusicFinished(music_done);
+		Mix_HookMusicFinished((void*)music_done);
 		printf("Now playing: %s\n", track_name);
 	}
 	else 

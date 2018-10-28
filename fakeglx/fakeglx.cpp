@@ -20,12 +20,12 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 // fakeglx.cpp - Uses Direct3D to implement a subset of OpenGL.
 
 #include "stdio.h"
-#include "FakeGLx.h"
+#include "fakeglx.h"
 
 // TODO: Fix this warning instead of disableing it
 #pragma warning( disable : 4244 )
 #pragma warning( disable : 4820 )
-#pragma warning(disable:4273)
+#pragma warning( disable : 4273 )
 
 #define     D3D_OVERLOADS
 #define     RELEASENULL(object) if (object) {object->Release();}
@@ -55,7 +55,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 void LocalDebugBreak()
 {
-	//Not needed atm
+	// Not needed atm
 	//DebugBreak();
 }
 
